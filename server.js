@@ -15,7 +15,7 @@ app.use(session({
 	store: new redisStore({
 		client: client,
 		saveUninitialized: true,
-		resave: true
+		resave: false
 	})
 }));
 
