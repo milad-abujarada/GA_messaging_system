@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 var users = 1;
 let root = (request, response) => {
 	//console.log('root controller', request.hasOwnProperty(session)/*.hasOwnProperty('loggedIn')*/);
-	if (request.hasOwnProperty(session)){
+/*	if (request.hasOwnProperty(session)){
 		if (request.session.hasOwnProperty('loggedIn')) {
 			response.redirect('/home');
 		} else {
@@ -11,7 +11,8 @@ let root = (request, response) => {
 		};
 	} else {
 		response.render('index');
-	}
+	}*/
+	response.render('index');
 };
 
 let signUpPage = (request, response) => response.render('signup');
