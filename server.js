@@ -14,7 +14,8 @@ app.use(session({
 	secret:'redisProject',
 	store: new redisStore({
 		client: client,
-		resave: false
+		saveUninitialized: true,
+		resave: true
 	})
 }));
 
