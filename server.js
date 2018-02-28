@@ -44,4 +44,4 @@ app.use((request, response, next) => {
 });
 app.use(routes);
 
-app.listen(process.env.PORT || 3000, () => console.log('Backend server up and running'));
+app.listen(PORT, () => console.log('Backend server up and running'));
