@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<%- include header.ejs %>
+	<%- include navbar.ejs %>
 	<h1>SEND A MESSAGE</h1>
-	<nav>
-		<ul>
-			<li><a href="/home">messages</a></li>
-			<li><a href ="/message/new">Send a message</a></li>
-			<li><a href="/logout">LOG OUT</a></li>
-		</ul>
-	</nav>
-	<form action="/message/new" method="POST">
-		<label>Send TO:</label>
-		<select name="to">
-		<% if (users.length) { %>
-			<% for(let i = 0; i < users.length; i++) { %>
-				<option><%= users[i] %></option>
-			<%}%>
-		<%}%> 
-		</select>
-		<textarea name="message"> </textarea>
-		<input type="submit" value="submit">
+	<form action="/message/new" method="POST" class="form-horizontal">
+		<div class="form-group">
+			<label>Send TO:</label>
+			<select name="to" class="form-control">
+			<% if (users.length) { %>
+				<% for(let i = 0; i < users.length; i++) { %>
+					<option><%= users[i] %></option>
+				<%}%>
+			<%}%> 
+			</select>
+			<br>
+			<label>Message:</label>
+			<textarea name="message" class="form-control"> </textarea>
+			<br>
+			<input type="submit" value="submit" class="btn btn-info btn-lg">
+		</div>
 	</form>
 </body>
 </html>

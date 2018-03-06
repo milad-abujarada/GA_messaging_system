@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>GA messaging system</title>
-</head>
-<body>
-	<form action="/signup/new" method="POST">
-		<h1>SignUp TO GA Messaging System</h1>
-		<input type="email" name="email" placeholder="Email">
-		<input type="password" name="password" placeholder="Password">
-		<input type="submit" name="submit" value="Submit">
-	</form>
-</body>
-</html>
+<%- include header.ejs %>
+	<div style="width: 50%; margin: 0 auto" class="text-center">
+		<form action="/signup/new" method="POST" class="form-horizontal">
+			<div class="form-group">
+				<h1>SignUp TO GA Messaging System</h1>
+				<input type="email" name="email" placeholder="Email" class="form-control">
+				<input type="password" name="password" placeholder="Password" class="form-control">
+				<br>
+				<input type="submit" name="submit" value="Submit" class="btn btn-info btn-lg">
+			</div>
+		</form>
+<%- include footer.ejs %>

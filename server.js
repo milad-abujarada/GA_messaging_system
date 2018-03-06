@@ -20,12 +20,12 @@ app.use(session({
 }));
 
 app.use((request, response, next) => {
-	//console.log('request in app.use in server.js==========>',request);
+	//console.log('request in app.use in server.js==========>',request.originalUrl);
 	if ((request.originalUrl !== '/') && (request.originalUrl !== '/signup/new') && (request.originalUrl !== '/login')) {
-		console.log('session ID', request.sessionID);
+		//console.log('session ID', request.sessionID);
 		client.GET("sess:" + request.sessionID, (error, result) => {
 			let sessionInfo = JSON.parse(result);
-			console.log('in server.js', sessionInfo, '===>>>', result);
+			//console.log('in server.js', sessionInfo, '===>>>', result);
 			if (sessionInfo) {
 				sessionInfo.hasOwnProperty('loggedIn')? next() : response.redirect('/'); 
 			} else {

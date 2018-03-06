@@ -2,17 +2,16 @@ const client = require('../config/redis_db');
 const bcrypt = require('bcrypt-nodejs');
 var users = 1;
 let root = (request, response) => {
-	//console.log('root controller', request.session/*.hasOwnProperty('loggedIn')*/);
-	//if (request.hasOwnProperty(session)) {
+	//console.log('root controller', request.hasOwnProperty(session) /*request.session.hasOwnProperty('loggedIn')*/);
+	if (request.hasOwnProperty(session)) {
 		if (request.session.hasOwnProperty('loggedIn')) {
 			response.redirect('/home');
 		} else {
 			response.render('index');
 		};
-	/*} else {
+	} else {
 		response.render('index');
-	}*/
-	//response.render('index');
+	}
 };
 
 let signUpPage = (request, response) => response.render('signup');
@@ -51,6 +50,7 @@ let validPassword = (password,hashedPassword) => {
 
 let login = (request, response) => {
 	//if (!request.session.loggedIn){
+		console.log('login controller');
 		client.HGET('Users',request.body.email, (error, result) => {
 			console.log(result);
 			if (result){

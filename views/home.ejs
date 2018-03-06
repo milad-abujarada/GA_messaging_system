@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<nav>
-		<ul>
-			<li><a href="/home">messages</a></li>
-			<li><a href ="/message/new">Send a message</a></li>
-			<li><a href="/logout">LOG OUT</a></li>
-		</ul>
-	</nav>
+<%- include header.ejs %>
+	<%- include navbar.ejs %>
 	<h2>inbox</h2>
 	<% if (emails) { %>
 		<div><%= emails %></div>
 		<% } else { %>
-		<div>No Available Messages </div>
+		<div>No Messages Available</div>
 		<% } %>
-	
-</body>
-</html>
+<%- include footer.ejs %>
