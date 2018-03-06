@@ -2,7 +2,7 @@ const client = require('../config/redis_db');
 const bcrypt = require('bcrypt-nodejs');
 var users = 1;
 let root = (request, response) => {
-	console.log('root controller', request.client.req /*request.session.hasOwnProperty('loggedIn')*/);
+	//console.log('root controller', request.client.req /*request.session.hasOwnProperty('loggedIn')*/);
 	if (request.hasOwnProperty(session)) {
 		if (request.session.hasOwnProperty('loggedIn')) {
 			response.redirect('/home');
