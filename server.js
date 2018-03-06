@@ -20,7 +20,7 @@ app.use(session({
 }));
 
 app.use((request, response, next) => {
-	console.log('request in app.use in server.js==========>',request);
+	//console.log('request in app.use in server.js==========>',request);
 	if ((request.originalUrl !== '/') && (request.originalUrl !== '/signup/new') && (request.originalUrl !== '/login')) {
 		console.log('session ID', request.sessionID);
 		client.GET("sess:" + request.sessionID, (error, result) => {

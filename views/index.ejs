@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>GA messaging system</title>
-</head>
-<body>
-	<form action="/login" method="POST">
-		<h1>Welcome TO GA Messaging System</h1>
-		<input type="email" name="email" placeholder="Email">
-		<input type="password" name="password" placeholder="Password">
-		<input type="submit" name="submit" value="Submit">
+<%- include header.ejs %>
+	<h1>Welcome TO GA Messaging System</h1>
+	<form action="/login" method="POST" class="form-horizontal">
+		<div class="form-group">
+			<input type="email" name="email" placeholder="Email" class="form-control">
+			<input type="password" name="password" placeholder="Password" class="form-control">
+			<input type="submit" name="submit" value="Submit" class="btn btn-info btn-md">
+		</div>
 	</form>
 	<p>DON'T HAVE AN ACCOUNT? <a href="/signup/new">SIGN UP</a></p>
-</body>
-</html>
+<%- include footer.ejs %>
